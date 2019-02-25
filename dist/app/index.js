@@ -13,6 +13,7 @@ const Mime = require("mime");
 const url = require("url");
 const querystring = require("querystring");
 const configs = require("../config/config.json");
+const fs = require("fs");
 const app = new Koa();
 //访问的 url 中以 /public 开始的,那么都代理(映射)到 static 目录中
 //接收2个参数: 第一个可以不填  ,配置:包括HttpOnly,maxAge   .    第二个参数: app
@@ -93,6 +94,14 @@ koa_controllers_1.useControllers(app, __dirname + '/controllers/**/*.js', {
         dest: process.cwd() + '/static/uploads/avatar',
         //设置功能更加强大的存储配置
         storage
+    }
+});
+app.use(async (ctx, next) => {
+    if (ctx.response.status === 404) {
+        if (ctx.req.url.startsWith('/public/admin')) {
+            let content = fs.readFileSync(process.cwd() + '/static/admin/index.html').toString();
+            ctx.body = content;
+        }
     }
 });
 const env = process.env.NODE_ENV || 'development';
