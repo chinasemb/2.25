@@ -22,7 +22,7 @@
   "production": {
     "username": "root",
     "password": "Shuishui123",
-    "database": "miaov_production",
+    "database": "meishi",
     "host": "172.19.0.11",
     "dialect": "mysql",
     "timezone": "+08:00",
