@@ -10,6 +10,7 @@ import * as KoaMulter from 'koa-multer';
 import * as Mime from 'mime';
 import * as url from 'url';
 import * as querystring from 'querystring';
+import * as configs from '../config/config.json';
 
 
 
@@ -117,4 +118,7 @@ useControllers(app, __dirname + '/controllers/**/*.js', {
 });
 
 
-app.listen(7777);
+const env = process.env.NODE_ENV || 'development';
+const config = configs[env];
+
+app.listen(config.web.port);
