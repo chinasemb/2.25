@@ -1,0 +1,124 @@
+.logo_header {
+    overflow: hidden;
+    margin-right: 40px;
+    float: left;
+}
+
+.logo_header h1 {
+    width: 108px;
+    height: 60px;
+    background: url(../img/logo.png) no-repeat left center/108px auto;
+    text-indent: -999px;
+    margin-right: 20px;
+    float: left;
+}
+
+.logo_header button {
+    float: left;
+    margin-top: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    background: #FF838B;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+    border: none;
+}
+
+.classify_nav {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+}
+
+.classify_nav a {
+    float: left;
+    padding: 0 10px 5px;
+    font-size: 20px;
+    color: #333;
+    position: relative;
+}
+
+.classify_nav a:hover {
+    color: #ff6767;
+}
+
+.classify_nav a::before {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    border: 9px solid transparent;
+    border-bottom: 9px solid #ff6767;
+    transform: translate(-50%, -30%);
+    display: none;
+}
+
+.classify_nav a::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    border: 9px solid transparent;
+    border-bottom: 9px solid #fff;
+    transform: translate(-50%, -20%);
+    display: none;
+}
+
+.classify_nav a.on::after {
+    display: block;
+}
+
+.classify_nav a.on::before {
+    display: block;
+}
+
+.classify_content {
+    margin: 10px 0;
+}
+
+.sub_nav {
+    border: 1px solid #ff6767;
+    border-right: none;
+    border-left: none;
+    line-height: 34px;
+}
+
+.sub_nav li a {
+    padding: 0 13px;
+    font-size: 14px;
+}
+
+.sub_nav li a:hover,
+.sub_nav li a.active {
+    color: #ff6767;
+}
+
+.location {
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #999;
+}
+
+.location a {
+    color: #999;
+}
+
+.location a:hover {
+    color: #FF838B;
+}
+
+.location a::after {
+    content: ' > ';
+}
+
+.location a:last-of-type::after {
+    content: '';
+}

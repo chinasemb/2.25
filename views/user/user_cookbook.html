@@ -1,0 +1,35 @@
+{%extends './layout.html'%}
+
+
+{%block head%}
+<link rel="stylesheet" href="/public/css/user_index.css">
+{%endblock%}
+
+
+{%block main%}
+<section class="self_content">
+    <div class="wrap">
+        <h2 class="clearfix">
+            <span>我的菜谱</span>
+            <a href="/user/publish" class="fr">发布新菜谱</a>
+        </h2>
+        <ul class="dynamic_list">
+            {%for cookbook in rs.rows%}
+            <li>
+                <div class="self_dynamic">
+                    <div class="dynamic_msg">
+                        <a href="/view/{{cookbook.id}}">{{cookbook.name}}</a>
+                    </div>
+                    <div class="dynamic_data">
+                        <a href="/user/cookbook/edit/{{cookbook.id}}">编辑</a>
+                        <span>|</span>
+                        <a href="/user/cookbook/remove/{{cookbook.id}}">删除</a>
+                    </div>
+                </div>
+            </li>
+            {%endfor%}
+        </ul>
+        <button class="more">查看更多</button>
+    </div>
+</section>
+{%endblock%}

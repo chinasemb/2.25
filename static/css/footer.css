@@ -1,0 +1,65 @@
+.bottom_foot{
+    border-top: 1px solid #eb2064;
+    margin-top: 35px;
+    padding-top: 135px;
+    padding-bottom: 135px;
+}
+.foot_nav h3{
+    color: rgb(63, 159, 204);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.foot_nav h3:hover{
+    transform: scale(1.01,1.01);
+    transition: 1s;
+}
+.bottom_foot a:hover{
+    color: #22c0b8;
+    transform: scale(1.11, 1.11);
+    transition: 1s;
+}
+.friends_link .blue a:hover {
+    color: #22c0b8;
+    transform: scale(4.11, 4.11,4.11);
+    transition: 1s;
+}
+.nav_list{
+    overflow: hidden;
+}
+.nav_list a{
+    float: left;
+    color: rgb(226, 177, 216);
+    font-size: 12px;
+    padding-right: 8px;
+}
+.nav_list a::after{
+    content: '·';
+    padding: 0 5px;
+}
+.nav_list a:last-of-type::after{
+    content: '';
+}
+.friends_link{
+    overflow: hidden;
+    margin: 15px 0;
+
+}
+.friends_link span{
+    font-weight: bold;
+    float: left;
+}
+.friends_link a{
+    float: left;
+    color:rgb(63, 159, 204);
+    margin-right: 12px;
+    padding-left: 8px;
+}
+.friends_link a:hover{
+    float: left;
+    color:rgb(63, 159, 204);
+    margin-right: 12px;
+    color: #22c0b8;
+    transform: scale(1.11, 1.11);
+    transition: 1s;
+}

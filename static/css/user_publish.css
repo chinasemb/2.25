@@ -1,0 +1,138 @@
+.addfood h4{
+    font-size: 16px;
+    color: #666;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px 0 0;
+}
+.addfood input{
+    width: 48%;
+    float: left;
+    border: 1px solid #ccc;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding: 0 10px; 
+}
+.foodnum button {
+    position: relative;
+    top: 5px;
+    width: 4%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #999;
+}
+.addfood>div:hover button, 
+.foodlist li:hover button {
+    display: block;
+}
+.thumb_list li {
+    margin: 10px;
+    width: 140px;
+    float: left;
+    text-align: center;
+}
+.thumb_list img {
+    width: 140px;
+}
+.thumb_list span {
+    line-height: 30px;
+    cursor: pointer;
+}
+.thumb_list span:hover {
+    color: red;
+}
+.button{
+    margin: 15px 0;
+    border: 1px solid #c9c890;
+    background: #fcfce3;
+    border-radius: 3px;
+    color: #333;
+    font-size: 14px;
+    line-height: 28px;
+    cursor: pointer;
+    float: none;
+    width: 88px;
+    text-align: center;
+}
+.upload{
+    display: block;
+    width: 72px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #c9c890;
+    background: #fcfce3;
+    text-align: center;
+    margin: 10px 0;
+}
+.upload input[type="file"]{
+    display: none;
+}
+.piclist label{
+    float: left;
+    width: 208px;
+    height: 156px;
+    background:#f7f7f7 center 45px no-repeat;
+    border: rgb(212, 200, 32) solid 1px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.piclist label span{
+    position: relative;
+}
+.piclist label img{
+    width: 208px;
+    height: 156px;
+    position: absolute;
+    left: -1px;
+    top: -81px;
+}
+.piclist .text {
+    margin-top: 80px;
+    color: #5b5b5b;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+.piclist input[type="file"]{
+    display: none;
+}
+.piclist textarea{
+    width: 650px;
+    height: 156px;
+    border: #999 solid 1px;
+    float: left;
+    margin: 0 0 0 30px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.piclist li{
+    margin: 15px 0;
+}
+.side_skill{
+    float: left;
+    margin-left: 10px;
+    width: 24px;
+}
+.side_skill span{
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ccc;
+    float: left;
+    text-align: center;
+    line-height: 24px;
+    color: #999;
+    margin-bottom: 10px;
+}
+.tips{
+    display: block;
+    width: 100%;
+    height: 128px;
+    border: 1px solid #ccc;
+    resize: both;
+    margin: 15px 0 ;
+    padding: 10px;
+}

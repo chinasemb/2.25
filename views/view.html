@@ -1,0 +1,209 @@
+{%extends './layout.html'%}
+
+
+
+{%block head%}
+<link rel="stylesheet" href="/public/css/view.css">
+{%endblock%}
+{%block main%}
+<div class="classify_content">
+    <div class="wrap">
+
+        <article class="food_details">
+            <div class="article_name clearfix">
+                <h3>{{cookbook.name}}</h3>
+                <ul class="article_info">
+                    <li>
+                        <i>收藏</i>
+                        <span>{{cookbook.favoriteCount}}</span>
+                    </li>
+                    <li>
+                        <i>留言</i>
+                        <span>{{cookbook.commentCount}}</span>
+                    </li>
+                    <li>
+                        <i class="article_img"><img src="/public/uploads/cookbooks/{{cookbook.avatar}}" alt=""></i>
+                        <span>{{cookbook.username}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="food_content">
+                {% if cookbook.covers.length >0 %}
+                
+                <div class="food_img">
+                    <img src="/public/uploads/cookbooks/{{cookbook.covers[0]}}" alt="">
+                </div>
+
+                {% if cookbook.covers.length > 1 %}
+
+                <div class="food_img_thumb">
+                    {% for cover in cookbook.covers %}
+                    <img {% if loop.index==1 %}class="active" {% endif %} src="/public/uploads/cookbooks/{{cover}}" alt="">
+                    {% endfor %}
+                </div>
+
+                {% endif %}
+                {% else %}
+                没图
+                {% endif %}
+                <p class="food_describe">
+                    {{cookbook.description}}
+                </p>
+                <div class="food_detailed">
+                    <h4 class="food_title">食材明细</h4>
+                    <fieldset>
+                        <legend>主料</legend>
+                        <ul class="detailed_list clearfix">
+                            {% for m in cookbook.ingredients.m %}
+                            <li>
+                                <span>{{m.k}}</span>
+                                <span>{{m.v}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>辅料</legend>
+                        <ul class="detailed_list clearfix">
+                            {% for s in cookbook.ingredients.s %}
+                            <li>
+                                <span>{{s.k}}</span>
+                                <span>{{s.v}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </fieldset>
+                    <div class="detailed_last">
+                        <ul class="detailed_list clearfix">
+                            <li>
+                                <span>工艺</span>
+                                <span>{{cookbook.craft}}</span>
+                            </li>
+                            <li>
+                                <span>难度</span>
+                                <span>{{cookbook.level}}</span>
+                            </li>
+                            <li>
+                                <span>口味</span>
+                                <span>{{cookbook.taste}}</span>
+                            </li>
+                            <li>
+                                <span>耗时</span>
+                                <span>{{cookbook.needTime}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="food_step">
+                        <h4 class="food_title">{{cookbook.name}}的做法步骤</h4>
+                        <ol class="step_list">
+                            {% for step in cookbook.steps %}
+                            <li>
+                                <img src="/public/uploads/cookbooks/{{step.p}}" alt="">
+                                <div class="step_text">
+                                    <i>{{loop.index}}</i>
+                                    <p>{{step.d}}</p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                    <div class="food_tip">
+                        <h4 class="food_title">小窍门</h4>
+                        <div class="tip_txt">
+                            <p>
+                                {{cookbook.tips}}
+                            </p>
+                            <span class="food_fenlei">
+                                所使用的的厨具: {{cookbook.cookers}}
+                            </span>
+                            <span class="food_fenlei">
+                                所属分类：
+                                <a href="/list/{{cookbook.categoryId}}">{{categoryName}}</a>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+        </article>
+        <div class="
+                                            comment">
+            <h3>评论</h3>
+            <div class="comment_content">
+                <textarea></textarea>
+                <div class="comment_bottom">
+                    <span>Ctrl+Enter也可以提交哦</span>
+                    <button>发表评论</button>
+                </div>
+            </div>
+            <div class="comment_list">
+                <h4>最新评论（<span>5</span>条）</h4>
+                <ul class="cmt_ul">
+                    <li>
+                        <img src="img/img.jpg" alt="">
+                        <div class="comment_txt">
+                            <div class="comment_name">
+                                <span>最初的最美❤</span>
+                                <time>16小时前</time>
+                                <a href="#">回复</a>
+                            </div>
+                            <p>
+                                看着就流口水了
+                            </p>
+                            <span>来自：<i>Android</i>客户端</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/img.jpg" alt="">
+                        <div class="comment_txt">
+                            <div class="comment_name">
+                                <span>最初的最美❤</span>
+                                <time>16小时前</time>
+                                <a href="#">回复</a>
+                            </div>
+                            <p>
+                                看着就流口水了
+                            </p>
+                            <span>来自：<i>Android</i>客户端</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/img.jpg" alt="">
+                        <div class="comment_txt">
+                            <div class="comment_name">
+                                <span>最初的最美❤</span>
+                                <time>16小时前</time>
+                                <a href="#">回复</a>
+                            </div>
+                            <p>
+                                看着就流口水了
+                            </p>
+                            <span>来自：<i>Android</i>客户端</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/img.jpg" alt="">
+                        <div class="comment_txt">
+                            <div class="comment_name">
+                                <span>最初的最美❤</span>
+                                <time>16小时前</time>
+                                <a href="#">回复</a>
+                            </div>
+                            <p>
+                                看着就流口水了
+                            </p>
+                            <span>来自：<i>Android</i>客户端</span>
+                        </div>
+                    </li>
+                </ul>
+                <button class="more">查看更多</button>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+
+{%block script%}
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/view.js"></script>
+{%endblock%}

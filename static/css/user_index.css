@@ -1,0 +1,45 @@
+.dynamic_list li{
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 15px;
+}
+.self_dynamic{
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
+}
+.dynamic_msg{
+    float: left;
+    font-size: 18px;
+    color: #999;
+}
+.dynamic_msg span{
+    color: #ff6767;
+}
+.dynamic_data{
+    float: right;
+    color: #999;
+    font-size: 14px;
+}
+/* .dynamic_img{
+    overflow: hidden;
+}
+.dynamic_img img{
+    float: left;
+    width: 180px;
+    height: 180px;
+}
+.dynamic_img figcaption{
+    float: left;
+    margin-left: 20px;
+}
+.dynamic_img figcaption i{
+    display: block;
+    color: #333;
+    font-size: 20px;
+    line-height: 130%;
+    font-weight: 400px;
+}
+.dynamic_img figcaption span{
+    font-size: 14px;
+    line-height: 25px;
+} */

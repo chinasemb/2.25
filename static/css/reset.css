@@ -1,0 +1,136 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    height: 100%;
+    font: 14px "微软雅黑";
+}
+input,
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+figure{
+    margin: 0;
+}
+i{
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+    color: rgb(206, 229, 233);
+}
+img{
+    border:none;
+    vertical-align: top;
+}
+input{
+    padding: 0;
+    border: none;
+    vertical-align: top;
+    outline: none;
+}
+button{
+    padding: 0;
+}
+ul,
+ol{
+    list-style: none;
+    padding: 0;
+}
+textarea{
+    padding: 0;
+    border:none;
+    resize: none;
+    outline: none;
+}
+
+/*public.css*/
+.wrap{
+    width: 990px;
+    margin: 0 auto;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+/* 父级div定义伪类：after和zoom */
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.box_outside{
+    min-width:990px;
+    background-color:#dfa5a5;
+}
+.hidden{
+    display:none
+}
+
+/*top*/
+.top {
+    text-align: right;
+    line-height: 32px;
+}
+.top .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.top_header{
+    height: 100px;
+    box-sizing: border-box;
+}
+
+/*search*/
+.search{
+    float: right;
+    width: 247px;
+    height: 28px;
+    margin-top: 19px;
+}
+.search input[type="search"]{
+    border:1px solid #25a0b1;
+    width: 166px;
+    height: 100%;
+    border-right: none;
+    border-radius: 9px 0 0 9px;
+    float: left;
+    text-indent: 10px;
+}
+.search button{
+    width: 80px;
+    height: 100%;
+    float: left;
+    background: #999999 url(../img/search.png) no-repeat 12px 6px;
+    background-size: 16px 16px;
+    border:none;
+    border-radius: 0 9px 9px 0;
+    color: rgb(192, 191, 180);
+    font-size: 14px;
+    text-align: left;
+    text-indent: 35px;
+    line-height: 28px;
+}
+.search button:hover{
+    background-color: #2290c4;
+}
+
+button.more{
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    color: #26c8dd;
+    font-size: 22px;
+    display: block;
+    border:none;
+    width: 100%;
+    margin-top: 20px;
+}

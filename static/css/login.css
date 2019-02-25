@@ -1,0 +1,129 @@
+/*--------------------------------------动画帧---------------------*/
+@keyframes bilingbiling {
+    0%{
+        background-position: -300px 0;
+    }
+    100%{
+        background-position: 400px 0;
+    }
+}
+
+.box_bg{
+    width: 100%;
+    height: 100%;
+    background: url(../img/food_bg1.jpg) no-repeat center;
+    background-size: cover;
+}
+/*-----------------------------登陆框-----------------------------------*/
+.loginbox{
+    width: 530px;
+    min-height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* background: #fff; */
+}
+.login_header{
+    height: 62px;
+    line-height: 62px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.login_header a{
+    float: left;
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    background: rgba(0,0,0,.6);
+    font-size: 20px;
+}
+.login_header a.active{
+    background:rgba(255,255,255,.8);
+    color: #333
+}
+.login_header a:hover{
+    text-decoration: underline;
+    color: #ff6767;
+}
+.login_header a.active:hover{
+    color: #333
+}
+
+
+.login_body{
+    background:rgba(255,255,255,.8);
+    height: 280px;
+    padding: 20px 0;
+    border-radius: 0px 0px 10px 10px;
+    overflow: hidden;
+}
+.login_transfrom{
+    width: 200%;
+    height: 100%;
+    transition: 0.3s linear;
+}
+/*========注册部分=========*/
+.login_register, .login_sign_in{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+.login_transfrom input[type="text"], .login_transfrom input[type="password"]{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: none;
+    display: block;
+    border-bottom: 1px solid #999999;
+    text-indent: 12px;
+    font-size: 16px;
+}
+.login_transfrom button{
+    background:linear-gradient(
+        -135deg,
+        rgba(255,255,255,0) 0px,
+        rgba(255,255,255,0) 200px,
+        rgba(255,255,255,0.4) 200px,
+        rgba(255,255,255,0.3) 250px,
+        rgba(255,255,255,0) 250px,
+        rgba(255,255,255,0) 300px
+        ) no-repeat #ff6767;
+    background-position: -300px 0;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+.login_transfrom button:hover{
+    animation: bilingbiling .8s forwards;
+}
+
+.login_transfrom input[type="text"]:focus, .login_transfrom input[type="password"]:focus{
+    border-bottom-color: #ff6767;
+}
+
+/*========登陆部分=========*/
+.login_transfrom input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    margin-right: 20px;
+    margin-top:20px;
+}
+.login_sign_in p{
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+}
+.login_sign_in a{
+    text-decoration: underline;
+    float: right;
+}

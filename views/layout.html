@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/public/css/reset.css">
+  <link rel="stylesheet" href="/public/css/header_sub.css">
+  <link rel="stylesheet" href="/public/css/footer.css">
+  <title>美食天下-带留言</title>
+  {%block head %} {%endblock%}
+</head>
+
+<body>
+  <div class="box_outside">
+    <div class="wrap">
+      <header class="classify_header clearfix">
+        {% include "./user/top.html" %}
+
+        <div class="logo_header">
+          <h1><a href="/">美食天下</a></h1>
+          <button>菜谱</button>
+        </div>
+        <nav class="classify_nav">
+          <a href="/">首页</a>
+          <a class="on" href="/list">菜谱</a>
+          <a href="#">精选集</a>
+          <a href="#">排行</a>
+        </nav>
+        <div class="search">
+          <input type="search" />
+          <button type="button" name="button">搜索</button>
+        </div>
+      </header>
+      <ul class="sub_nav">
+        <li>
+          <a href="/list" {%if categoryId==undefined%}class="active" {%endif%}>全部</a>
+          {% for category in categories %}
+          <a href="/list/{{category.id}}" {%if category.id==categoryId%}class="active" {%endif%}>{{category.name}}</a>
+          {% endfor %}
+        </li>
+      </ul>
+    </div>
+
+    <div class="classify_content">
+      <div class="wrap">
+        <div class="location">
+          您的位置：
+          <a href='/'>美食天下</a>
+          <a href='/list'>菜谱</a>
+          <a href='/list/{{cookbook.categoryId}}'>{{categoryName}}</a>
+        </div>
+      </div>
+    </div>
+
+    {%block main%}
+    {%endblock%}
+    <div class="wrap">
+      <footer class="bottom_foot">
+        <div class="foot_nav">
+          <h3>美食天下 - 让吃更美好！</h3>
+          <nav class="nav_list">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">加入我们</a>
+            <a href="#">服务声明</a>
+            <a href="#">友情链接</a>
+            <a href="#">网站地图</a>
+            <a href="#">移动应用</a>
+          </nav>
+        </div>
+        <p class="friends_link">
+          <span>友情链接：</span>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  {%block script%}
+  {%endblock%}
+
+</body>
+
+</html>

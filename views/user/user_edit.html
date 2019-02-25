@@ -1,0 +1,289 @@
+{%block head%}
+<link rel="stylesheet" href="/public/css/user_form.css">
+<link rel="stylesheet" href="/public/css/user_publish.css">
+{%endblock%}
+
+{%extends './layout.html'%}
+
+{%block main%}
+<section class="self_content">
+    <div class="wrap">
+        <h2><span>发布新菜谱</span></h2>
+        <div>
+            <p class="required">菜谱名称</p>
+            <input id='name' value="{{cookbook.name}}" type="text" required>
+        </div>
+        <div>
+            <p class="required">分类</p>
+            <select name="" id="categoryId">
+                {%for category in categories%}
+                <option value="{{category.id}}" {%if category.id==cookbook.categoryId%}selected{%endif%}>
+                    {{category.name}}
+                </option>
+                {%endfor%}
+            </select>
+        </div>
+        <div>
+            <p class="required">成品图片（最多9张）</p>
+            <!-- multiple多张  属性 -->
+            <label class="filelabel"><span>上传成品图</span><input type="file" id='thumb' multiple></label>
+            <!-- {{cookbook.covers}} -->
+            <ul class="thumb_list">
+                <!-- <li>
+                    <img src="./img/food1.jpg" />
+                    <span>删除</span>
+                </li> -->
+                {%for cover in cookbook.covers%}
+                <li>
+                    <img _src="{{cover}}" src="/public/uploads/cookbooks/{{cover}}" />
+                    <span>删除</span>
+                </li>
+                {%endfor%}
+            </ul>
+            <textarea id="description" placeholder="请输入菜谱描述，最多输入500字">{{cookbook.description}}</textarea>
+        </div>
+        <div>
+            <p class="required">基本参数</p>
+            <ul class="optionlist clearfix">
+                <li>
+                    <div class="select clearfix">
+                        <span>{{cookbook.taste}}</span>
+                        <em id="taste"></em>
+                        <i></i>
+                    </div>
+                    <div class="selectoption hidden">
+                        <span>微辣</span>
+                        <span>中辣</span>
+                        <span>超辣</span>
+                        <span>麻辣</span>
+                        <span>酸辣</span>
+                        <span>酸甜</span>
+                        <span>酸咸</span>
+                        <br />
+                        <span>咸鲜</span>
+                        <span>咸甜</span>
+                        <span>甜味</span>
+                        <span>苦味</span>
+                        <span>原味</span>
+                        <span>清淡</span>
+                        <span>五香</span>
+                        <br />
+                        <span>鱼香</span>
+                        <span>葱香</span>
+                        <span>蒜香</span>
+                        <span>奶香</span>
+                        <span>酱香</span>
+                        <span>糟香</span>
+                        <span>咖喱</span>
+                        <br />
+                        <span>孜然</span>
+                        <span>果味</span>
+                        <span>香草</span>
+                        <span>怪味</span>
+                        <span>咸香</span>
+                        <span>甜香</span>
+                        <span>麻香</span>
+                        <br />
+                        <span>其他</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="select clearfix">
+                        <span>{{cookbook.craft}}</span>
+                        <em id="craft"></em>
+                        <i></i>
+                    </div>
+                    <div class="selectoption hidden">
+                        <span>烧</span>
+                        <span>炒</span>
+                        <span>爆</span>
+                        <span>焖</span>
+                        <span>炖</span>
+                        <span>蒸</span>
+                        <span>煮</span>
+                        <br />
+                        <span>拌</span>
+                        <span>烤</span>
+                        <span>炸</span>
+                        <span>烩</span>
+                        <span>溜</span>
+                        <span>氽</span>
+                        <span>腌</span>
+                        <br />
+                        <span>卤</span>
+                        <span>炝</span>
+                        <span>煎</span>
+                        <span>酥</span>
+                        <span>扒</span>
+                        <span>熏</span>
+                        <span>煨</span>
+                        <br />
+                        <span>酱</span>
+                        <span>煲</span>
+                        <span>烙</span>
+                        <span>榨</span>
+                        <span>烘焙</span>
+                        <span>火锅</span>
+                        <span>砂锅</span>
+                        <br />
+                        <span>拔丝</span>
+                        <span>生鲜</span>
+                        <span>调味</span>
+                        <span>技巧</span>
+                        <span>冷冻</span>
+                        <span>其他</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="select clearfix">
+                        <span>{{cookbook.needTime}}</span>
+                        <em id="needTime"></em>
+                        <i></i>
+                    </div>
+                    <div class="selectoption hidden">
+                        <span>十分钟</span>
+                        <span>廿分钟</span>
+                        <span>半小时</span>
+                        <span>三刻钟</span>
+                        <span>一小时</span>
+                        <span>数小时</span>
+                        <span>一天</span>
+                        <span>数天</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="select clearfix">
+                        <span>{{cookbook.level}}</span>
+                        <em id='level'></em>
+                        <i></i>
+                    </div>
+                    <div class="selectoption hidden">
+                        <span>简单</span>
+                        <span>普通</span>
+                        <span>高级</span>
+                        <span>神级</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="select clearfix">
+                        <span>{{cookbook.cookers.join(',')}}</span>
+                        <em id='cookers' class="more_option"></em>
+                        <i></i>
+                    </div>
+                    <div class="selectoption hidden">
+                        <span>锅1</span>
+                        <span>锅2</span>
+                        <span>锅3</span>
+                        <span>锅4</span>
+                        <span>锅5</span>
+                        <span>锅6</span>
+                        <span>锅7</span>
+                        <span>锅8</span>
+                        <br />
+                        <span>锅11</span>
+                        <span>锅22</span>
+                        <span>锅33</span>
+                        <span>锅44</span>
+                        <span>锅55</span>
+                        <span>锅66</span>
+                        <span>锅77</span>
+                        <span>锅88</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p class="required">食物明细（新功能：支持添加多组食材，并可以修改食材组名）</p>
+            <div class="addfood">
+                <h4>主料</h4>
+                <ul class="foodlist m">
+                    <!-- <li class="foodnum clearfix">
+                        <input type="text" placeholder="食材名">
+                        <input type="text" placeholder="用量">
+                        <button class="hidden">X</button>
+                    </li> -->
+                    {%for m in cookbook.ingredients.m %}
+                    <li class="foodnum clearfix">
+                        <input type="text" placeholder="食材名" value="{{m.k}}">
+                        <input type="text" placeholder="用量" value="{{m.v}}">
+                        <button class="hidden">X</button>
+                    </li>
+                    {%endfor%}
+                </ul>
+                <button class="button">添加主料组</button>
+                <h4>辅料</h4>
+                <ul class="foodlist s">
+                    <!-- <li class="foodnum clearfix">
+                        <input type="text" placeholder="食材名">
+                        <input type="text" placeholder="用量">
+                        <button class="hidden">X</button>
+                    </li> -->
+                    {%if cookbook.ingredients.s.length > 0%}
+                    {%for s in cookbook.ingredients.s %}
+                    <li class="foodnum clearfix">
+                        <input type="text" placeholder="食材名" value="{{s.k}}">
+                        <input type="text" placeholder="用量" value="{{s.v}}">
+                        <button class="
+                            hidden">X</button>
+                    </li>
+                    {%endfor%}
+                    {%endif%}
+                </ul>
+                <button class="button">添加辅料组</button>
+            </div>
+        </div>
+        <div>
+            <p class="required">做法步骤</p>
+            <label class="upload">
+                <span>批量上传</span>
+                <input type="file" required multiple id='step'>
+            </label>
+            <ul class="piclist">
+                <!-- <li class="clearfix">
+                    <label id='sc'>
+                        <span class="text"><img src="http://localhost:7777/public/uploads/avatar/mt.jpg" alt=""></span>
+                        <input type="file">
+                    </label>
+                    <textarea name="miaoshu" placeholder="请输入做法说明菜谱描述，最多输入200字"></textarea>
+                    <aside class="side_skill">
+                        <span>X</span>
+                        <span>∧</span>
+                        <span>∨</span>
+                        <span>+</span>
+                    </aside>
+                </li> -->
+                {%for step in cookbook.steps%}
+                <li class="clearfix">
+                    <label id='sc'>
+                        <span class="text"><img _src={{step.p}} src="/public/uploads/cookbooks/{{step.p}}" /></span>
+                        <input type="file">
+                    </label>
+                    <textarea name="miaoshu" placeholder="请输入做法说明菜谱描述，最多输入200字">{{step.d}}</textarea>
+                    <aside class="side_skill">
+                        <span>X</span>
+                        <span>∧</span>
+                        <span>∨</span>
+                        <span>+</span>
+                    </aside>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div>
+            <p>小窍门</p>
+            <textarea id="tips" placeholder="最多输入500字">{{cookbook.tips}}</textarea>
+        </div>
+        <div>
+            <button class="submit">发布菜谱</button>
+            <span class="message"></span>
+            <input type="hidden" id="id" value="{{cookbook.id}}">
+        </div>
+    </div>
+</section>
+{%endblock%}
+
+{%block js%}
+<script src='/public/js/jquery.min.js'></script>
+<script src='/public/js/publish.js'></script>
+<script src='/public/js/user.js'></script>
+{%endblock%}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/header.css">
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="/public/css/footer.css">
+    <title>美食天下-妙味版</title>
+</head>
+
+<body>
+    <div class="box_outside">
+        <!-- 包裹层开始 -->
+        <div class="wrap">
+
+            <!-- Header -->
+            <header class="top_header">
+                {% include "./user/top.html" %}
+                <h1 class="logo"><a href="/">美食天下</a></h1>
+                <nav class="header_nav">
+                    <a href="/">首页</a>
+                    <a href="/list">菜谱</a>
+                    <a href="#">精选集</a>
+                    <a href="#">排行</a>
+                </nav>
+                <div class="search">
+                    <input type="search" />
+                    <button type="button" name="button">搜索</button>
+                </div>
+            </header>
+            <!-- Banner and Menu -->
+            <section class="show_area">
+                <div class="banner">
+                    <a id="prev" href="javascript:;"></a>
+                    <ul class="show_img">
+                        <li><img src="/public/img/banner1.jpg" alt="" /></li>
+                        <li class="active"><img src="/public/img/banner2.jpg" alt="" /></li>
+                        <li><img src="/public/img/banner3.jpg" alt="" /></li>
+                        <li><img src="/public/img/banner4.jpg" alt="" /></li>
+                        <li><img src="/public/img/banner5.jpg" alt="" /></li>
+                    </ul>
+                    <a id="next" href="javascript:;"></a>
+                    <ul class="spot">
+                        <li></li>
+                        <li class="active">
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <ul class="menu">
+                    {%for category in categories%}
+                    {%if loop.index<=5%} <li>
+                        <a href="#">{{category.name}}</a>
+                        <ul class="sub">
+                            {%for child in category.children%}
+                            <li><a href="#">{{child.name}}</a></li>
+                            {%endfor%}
+                            <!-- <li><a href="#">人气菜肴<span>超过50人收藏</span></a></li>
+                                    <li><a href="#">夏季食谱<span>看看大家在吃啥</span></a></li>
+                                    <li><a href="#">一周热门<span>近七天最受欢迎</span></a></li>
+                                    <li><a href="#">人气菜肴<span>超过50人收藏</span></a></li>
+                                    <li><a href="#">夏季食谱<span>看看大家在吃啥</span></a></li>
+                                    <li><a href="#">一周热门<span>近七天最受欢迎</span></a></li>
+                                    <li><a href="#">人气菜肴<span>超过50人收藏</span></a></li>
+                                    <li><a href="#">夏季食谱<span>看看大家在吃啥</span></a></li>
+                                    <li><a href="#">一周热门<span>近七天最受欢迎</span></a></li>
+                                    <li><a href="#">人气菜肴<span>超过50人收藏</span></a></li>
+                                    <li><a href="#">夏季食谱<span>看看大家在吃啥</span></a></li> -->
+                        </ul>
+                        </li>
+                        {%endif%}
+                        {%endfor%}
+                        <!-- <li>
+                            <a href="#">常见菜式</a>
+                            <ul class="sub">
+                                <li><a href="#">夏天夏天<span>超过50人收藏</span></a></li>
+                                <li><a href="#">悄悄过去<span>超过50人收藏</span></a></li>
+                                <li><a href="#">留下小秘密<span>看看大家在吃啥</span></a></li>
+                                <li><a href="#">测试歌词<span>近七天最受欢迎</span></a></li>
+                                <li><a href="#">人气菜肴<span>超过50人收藏</span></a></li>
+                                <li><a href="#">夏季食谱<span>看看大家在吃啥</span></a></li>
+                                <li><a href="#">一周热门<span>近七天最受欢迎</span></a></li>
+                                <li><a href="#">人气菜肴<span>超过50人收藏</span></a></li>
+                                <li><a href="#">夏季食谱<span>看看大家在吃啥</span></a></li>
+                                <li><a href="#">一周热门<span>近七天最受欢迎</span></a></li>
+                                <li><a href="#">人气菜肴<span>超过50人收藏</span></a></li>
+                                <li><a href="#">夏季食谱<span>看看大家在吃啥</span></a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li>
+                            <a href="#">中菜</a>
+                        </li>
+                        <li>
+                            <a href="#">西菜</a>
+                        </li>
+                        <li>
+                            <a href="#">烘焙</a>
+                        </li> -->
+                </ul>
+            </section>
+            <!-- News -->
+            <section class="news">
+
+                <a id="news_prev" href="javascript:;"></a>
+                <!-- News Content -->
+                <div class="news_content">
+                    <!-- UL and Li -->
+                    <ul class="news_list">
+                        <li>
+                            <h2>清淡素食，健康简约不简单～</h2>
+                            <p>
+                                <span>李金芳成的菜单</span>
+                                科学搭配、合理素食，是当下流行的健康生活方式。为家人健康，收藏，尝试！ ​
+                            </p>
+                        </li>
+                        <li>
+                            <h2>美味蒸菜系列之蒸蛋</h2>
+                            <p>
+                                <span>Gladys0512的菜单</span>
+                                一道普通的蒸水蛋，竟然还有这么多的花样做法，喜欢的快来试试看吧～ ​
+                            </p>
+                        </li>
+                        <li>
+                            <h2>花样早餐</h2>
+                            <p>
+                                <span>叶子_QjgLpb的菜单</span>
+                                美好的一天从一顿丰富的早餐开始～让幸福感再强烈一点吧～
+                            </p>
+                        </li>
+                        <li>
+                            <h2>我的健康小零食－饼干</h2>
+                            <p>
+                                <span>冬至zsl的菜单</span>
+                                自制健康美味的小饼干，香酥美味，做法简单，适合刚学烘焙的童鞋，美食get√​
+                            </p>
+                        </li>
+                        <li>
+                            <h2>我的健康小零食－饼干</h2>
+                            <p>
+                                <span>冬至zsl的菜单</span>
+                                自制健康美味的小饼干，香酥美味，做法简单，适合刚学烘焙的童鞋，美食get√​
+                            </p>
+                        </li>
+                        <li>
+                            <h2>我的健康小零食－饼干</h2>
+                            <p>
+                                <span>冬至zsl的菜单</span>
+                                自制健康美味的小饼干，香酥美味，做法简单，适合刚学烘焙的童鞋，美食get√​
+                            </p>
+                        </li>
+                        <li>
+                            <h2>水果花样吃法！</h2>
+                            <p>
+                                <span>阿鸢0808的菜单</span>
+                                水果的各种花样吃法，看起来色彩缤纷的太诱惑人了 ​！喜欢还不赶紧收藏？
+                            </p>
+                        </li>
+                        <li>
+                            <h2>水果花样吃法！</h2>
+                            <p>
+                                <span>阿鸢0808的菜单</span>
+                                水果的各种花样吃法，看起来色彩缤纷的太诱惑人了 ​！喜欢还不赶紧收藏？
+                            </p>
+                        </li>
+                        <li>
+                            <h2>水果花样吃法！</h2>
+                            <p>
+                                <span>阿鸢0808的菜单</span>
+                                水果的各种花样吃法，看起来色彩缤纷的太诱惑人了 ​！喜欢还不赶紧收藏？
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <a id="news_next" href="javascript:;"></a>
+            </section>
+
+
+            <!-- 新秀菜谱 -->
+            <section class="dish_display">
+                <!-- 新秀头部区域 -->
+                <header class="dish_header">
+
+                    <nav class="dish_list">
+                        <a class="on" href="javascript:;">新秀菜谱</a>
+                        <a href="javascript:;">一周热门</a>
+                    </nav>
+
+                    <nav class="dish_link">
+                        <a href="javascript:;">热菜</a>
+                        <a href="javascript:;">凉菜</a>
+                        <a href="javascript:;">汤羹</a>
+                        <a href="javascript:;">主食</a>
+                        <a href="javascript:;">小吃</a>
+                        <a href="javascript:;">西餐</a>
+                        <a href="javascript:;">菜谱首页</a>
+                    </nav>
+
+                </header>
+                <!-- 新秀群图片 -->
+                <div class="dish_content">
+
+                    <ul>
+
+                        {%for cookbook in data2%}
+                        <li>
+                            <figure>
+                                <div class="dish_img">
+                                    <!-- 根据当前美食的id , -->
+                                    <a href="/view/{{cookbook.id}}">
+                                        <img src="/public/uploads/cookbooks/{{cookbook.cover}}" alt="" />
+                                    </a>
+                                </div>
+                                <figcaption>
+                                    <i>{{cookbook.name}}</i>
+                                    <span>{{cookbook.username}}</span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        {%endfor%}
+
+                    </ul>
+
+                </div>
+                <!-- 新秀图片结束 -->
+            </section>
+            <!-- Footer开始 -->
+            <footer class="bottom_foot">
+                <div class="foot_nav">
+                    <h3>美食天下 - 让吃更美好！</h3>
+                    <nav class="nav_list">
+                        <a href="#">关于我们</a>
+                        <a href="#">联系我们</a>
+                        <a href="#">加入我们</a>
+                        <a href="#">服务声明</a>
+                        <a href="#">友情链接</a>
+                        <a href="#">网站地图</a>
+                        <a href="#">移动应用</a>
+                    </nav>
+                </div>
+                <p class="friends_link">
+                    <span class="blue"><a href="">友情链接：</a></span>
+                    <a href="#">Html</a>
+                    <a href="#">Css</a>
+                    <a href="#">Js</a>
+                    <a href="#">Ts</a>
+                    <a href="#">Php</a>
+                    <a href="#">Sequelize</a>
+                    <a href="#">Mysql</a>
+                    <a href="#">Ssr</a>
+                    <a href="#">Java</a>
+                    <a href="#">Koa</a>
+                    <a href="#">Egg</a>
+                </p>
+            </footer>
+            <!-- Footer结束 -->
+        </div>
+        <!-- 包裹层结束 -->
+    </div>
+</body>
+
+</html>

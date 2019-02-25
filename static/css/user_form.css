@@ -1,0 +1,155 @@
+.form>div {
+    margin-top: 20px;
+}
+
+.form>div>p {
+    color: #888;
+    position: relative;
+    display: inline;
+}
+
+.form>div>p.required::after {
+    content: '*';
+    position: absolute;
+    right: -8px;
+    top: 0;
+    color: #f00;
+}
+
+input[type="text"] {
+    display: block;
+    height: 32px;
+    width: 100%;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 0 5px;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    height: 128px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+select {
+    height: 30px;
+}
+
+.filelabel {
+    display: block;
+    width: 86px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: #fcfce3;
+    border: 1px solid #c9c890;
+    color: #333;
+    border-radius: 3px;
+    margin: 5px 0;
+}
+
+.filelabel input[type="file"] {
+    display: none;
+}
+
+.optionlist li {
+    float: left;
+    margin: 10px 20px 0 0;
+    height: 28px;
+    position: relative;
+}
+
+.select {
+    display: inline-block;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    line-height: 26px;
+}
+
+.select span {
+    float: left;
+    height: 26px;
+    padding: 0 5px;
+    color: #999;
+}
+
+.select em {
+    float: left;
+    width: 50px;
+    height: 26px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.select i {
+    float: left;
+    width: 25px;
+    text-align: center;
+    height: 26px;
+}
+
+.select i::before {
+    content: '';
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border: 5px dashed transparent;
+    border-top: 6px solid #ccc;
+    margin: 11px auto 0;
+    overflow: hidden;
+}
+
+.select:hover i {
+    background: #f8f8c2;
+}
+
+.select:hover i::before {
+    border-top-color: #999
+}
+
+.selectoption {
+    position: absolute;
+    background: #f8f8c2;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    font-size: 0;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.selectoption span {
+    font-size: 12px;
+    display: inline-block;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    color: #999;
+    cursor: pointer;
+    text-align: center;
+    padding: 3px 4px;
+    margin: 5px;
+    background: #FFF;
+    min-width: 34px;
+}
+
+.select .more_option {
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.submit {
+    background: #ff6767;
+    border: 1px solid #ff6767;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    width: 140px;
+}

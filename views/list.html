@@ -1,0 +1,55 @@
+﻿{%extends './layout.html'%}
+
+
+
+{%block head%}
+<link rel="stylesheet" href="/public/css/list.css">
+{%endblock%}
+{%block main%}
+<div class="classify_content">
+    <div class="wrap">
+        <!-- 位置 -->
+
+        <header class="content_header clearfix">
+            <h2>{{categoryName}}</h2>
+            <!--<nav>
+                            <a class="active" href="#">最新</a>
+                            <a href="#">最热</a>
+                            <a href="#">推荐</a>
+                        </nav>-->
+        </header>
+        <ul class="content_list">
+            {%for cookbook in cookbooks%}
+            <li>
+                <div class="list_img">
+                    <img src="/public/uploads/cookbooks/{{cookbook.covers[0]}}" alt="">
+                </div>
+                <div class="content_txt">
+                    <h3>
+                        <a href="/view/{{cookbook.id}}">{{cookbook.name}}</a>
+                    </h3>
+                    <span>{{cookbook.username}}</span>
+                    <p class="raw_material">原料：{{cookbook.ingredients}}</p>
+                    <p class="describe">
+                        {{cookbook.description}}
+                    </p>
+                    <p class="comment">
+                        <span class="love">{{cookbook.favoriteCount}}</span>
+                        <span class="msg">{{cookbook.CommentCount}}</span>
+                    </p>
+                </div>
+            </li>
+            {%endfor%}
+        </ul>
+        {%if isMore%}<button class="more">查看更多</button>{%endif%}
+        <!-- {{isMore}}
+        {{page}}
+        {{pages}} -->
+    </div>
+</div>
+{%endblock%}
+
+{%block script%}
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/list.js"></script>
+{%endblock%}

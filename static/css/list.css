@@ -1,0 +1,107 @@
+
+.content_header{
+    height: 35px;
+    border-bottom: 1px solid #eeeeee;
+}
+.content_header h2{
+    float: left;
+    height: 100%;
+    border-bottom:3px solid #ff6767;
+    color: #ff6767;
+    font-weight: normal;
+}
+.content_header nav{
+    float: right;
+}
+.content_header nav a{
+    float: left;
+    font-size: 16px;
+    margin-left: 20px;
+    color:#333;
+}
+.content_header nav a.active{
+    color: #ff6767;
+}
+.content_list li{
+    margin: 20px 0;
+    overflow: hidden;
+}
+.list_img{
+    width: 180px;
+    height: 180px;
+    float: left;
+}
+.list_img img{
+    float: left;
+    height: 180px;
+    width: 180px;
+    transition: .5s;
+}
+.content_list li:hover img{
+    transform: scale(1.1);
+}
+.content_txt{
+    float: right;
+    width: 790px;
+}
+.content_txt h3{
+    font-size: 20px;
+    padding: 3px 0 10px;
+    color: #333;
+    font-weight: 400;
+}
+.content_txt span{
+    display: block;
+    color: #999;
+    font-size: 14px;
+}
+.raw_material{
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    padding-top: 10px;
+}
+.describe{
+    font-size: 16px;
+    color: #000;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+.describe::before, .describe::after{
+    content: '';
+    width: 21px;
+    height: 15px;
+    display: inline-block;
+    background: url(../img/markright.jpg) no-repeat 0 0/21px 15px;
+    margin-right: 10px;
+    margin-top: 3px;
+    vertical-align: top;
+}
+.describe::after{
+    background-image: url(../img/markleft.jpg);
+    margin-right: 0;
+    margin-left: 10px;
+}
+.comment{
+    float: right;
+}
+.comment span{
+    float: left;
+    margin-right:20px;
+    font-size: 16px;
+}
+.comment .love::before, .comment .msg::before{
+    content: '';
+    width:23px;
+    height: 20px;
+    display: inline-block;
+    background: url(../img/love.jpg) no-repeat;
+    margin-right: 10px;
+    vertical-align: top;
+}
+.comment .msg::before{
+    width:19px;
+    height: 19px;
+    background: url(../img/msg.jpg) no-repeat;
+    margin-top: 3px;
+}

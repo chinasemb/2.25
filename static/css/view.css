@@ -1,0 +1,284 @@
+
+.food_details{
+    padding-top: 15px;
+}
+.article_name{
+    padding: 0 0 10px 0;
+}
+.article_name h3{
+    float: left;
+    line-height: 36px;
+    padding-top: 5px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #333;
+}
+.article_info{
+    float: right;
+}
+.article_info li{
+    float: left;
+    text-align: center;
+    margin: 0 15px;
+    line-height: 25px;
+}
+.article_info li i, .article_info li span{
+    display: block;
+    font-size: 16px;
+}
+.article_info li:nth-of-type(1) i, .article_info li:nth-of-type(2) i{
+    width: 34px;
+    height: 34px;
+    background: url(../img/love.jpg) no-repeat center;
+    background-size: 19px 19px;
+    font-size: 0;
+}
+.article_info li:nth-of-type(2) i{
+    background-image: url(../img/msg.jpg);
+}
+.article_img{
+    width: 34px;
+    height: 34px;
+}
+.article_img img{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+.food_img {
+    text-align: center;
+    padding-top: 15px;
+}
+.food_img_thumb{
+    padding-left: 300px
+}
+.food_img_thumb img {
+    width: 100px;
+}
+.active{
+    border: 2px solid red
+}
+.food_describe{
+    font-size: 16px;
+    line-height: 30px;
+    padding-top: 30px;
+}
+.food_describe::before, .food_describe::after{
+    content: '';
+    width: 21px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: top;
+    background: url(../img/markright.jpg) no-repeat 0 0/21px 16px;
+    margin-top: 5px;
+}
+.food_describe::after{
+    background-image:url(../img/markleft.jpg);
+}
+.food_detailed{
+    padding-top: 20px;
+}
+.food_title{
+    height: 60px;
+    line-height: 60px;
+    background: url(../img/circle.png) no-repeat left center;
+    padding-left: 30px;
+    color: #ff6767;
+    font-size: 20px;
+}
+.food_detailed fieldset, .detailed_last{
+    border:1px solid #ddd;
+    border-radius: 10px;
+    padding-bottom:10px;
+    margin-bottom: 15px;
+}
+.detailed_last{
+    margin-top: 20px;
+}
+.food_detailed legend{
+    padding: 0 10px;
+    font-size: 16px;
+}
+.detailed_list li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    height: 70px;
+}
+.detailed_list li span{
+    display: block;
+}
+.detailed_list li span:first-of-type{
+    font-size: 20px;
+    color: #666;
+    overflow: hidden;
+    height: 40px;
+    line-height: 45px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.detailed_list li span:last-of-type{
+    font-size: 12px;
+    line-height: 16px;
+    color: #999;
+}
+.food_step{
+    padding-top: 20px;
+}
+.step_list{
+    padding-top: 20px;
+}
+.step_list li{
+    margin-bottom: 40px;
+}
+.step_list li::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.step_list img{
+    width: 220px;
+    height: 165px;
+    float: left;
+}
+.step_text{
+    padding-left: 20px;
+    float: left;
+    width: 750px;
+}
+.step_text i{
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    display: block;
+    position: relative;
+    top:-10px;
+}
+.step_text p, .food_tip p, .food_fenlei{
+    font-size: 18px;
+    line-height: 30px;
+}
+.food_tip p{
+    padding: 5px 0;
+}
+.food_fenlei{
+    display: block;
+    padding-top: 10px;
+}
+.food_fenlei a{
+    color: #666;
+}
+.comment{
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.comment h3{
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: normal;
+}
+.comment_content{
+    height: 167px;
+    border: 1px solid #cccccc;
+    margin-top: 40px;
+}
+.comment_content textarea{
+    display: block;
+    width: 100%;
+    height: 126px;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 16px;
+    overflow: hidden;
+}
+.comment_bottom{
+    height: 40px;
+    line-height: 40px;
+    background: #eeeeee url(../img/face.gif) no-repeat 7px 7px;
+    border-top: 1px solid #cccccc;
+}
+.comment_bottom span{
+    padding-left: 50px;
+    color: #999;
+    font-size: 12px;
+}
+.comment_bottom button{
+    float: right;
+    width: 110px;
+    height: 32px;
+    background: #ba2020;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 26px;
+    border:none;
+    height: 100%;
+}
+.comment_list{
+    padding-top: 25px;
+}
+.comment_list h4{
+    font-size: 18px;
+    line-height: 38px;
+    border-left: 3px solid #ba2020;
+    text-indent: 30px;
+}
+.cmt_ul{
+    padding-top: 20px;
+}
+.cmt_ul li{
+    border-bottom: 1px dotted #e4e4e4;
+    padding: 10px 0;
+    overflow: hidden;
+}
+.cmt_ul li:last-of-type{
+    border:none;
+}
+.cmt_ul li::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.cmt_ul img{
+    float: left;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.comment_txt{
+    float: left;
+    padding-left: 20px;
+    width: 922px;
+}
+.comment_name{
+    overflow: hidden;
+    height: 24px;
+    line-height: 24px;
+}
+.comment_txt .comment_name span{
+    color: #6599ff;
+    float: left;
+}
+.comment_txt .comment_name time{
+    color: #666;
+    padding-left: 10px;
+    float: left;
+}
+.comment_txt .comment_name a{
+    color: #333;
+    float: right;
+}
+.comment_txt p{
+    font-size: 16px;
+    line-height: 25px;
+    padding: 5px 0;
+}
+.comment_txt span{
+    color: #999;
+}

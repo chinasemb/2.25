@@ -1,0 +1,32 @@
+{
+    "development": {
+        "username": "www",
+        "password": "www",
+        "database": "miaov_development",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "timezone": "+08:00",
+        "seederStorage": "sequelize",
+        "seederStorageTableName": "sequelize_data"
+    },
+    "test": {
+        "username": "www",
+        "password": "www",
+        "database": "miaov_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "timezone": "+08:00",
+        "seederStorage": "sequelize",
+        "seederStorageTableName": "sequelize_data"
+    },
+    "production": {
+        "username": "www",
+        "password": "www",
+        "database": "miaov_production",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "timezone": "+08:00",
+        "seederStorage": "sequelize",
+        "seederStorageTableName": "sequelize_data"
+    }
+}

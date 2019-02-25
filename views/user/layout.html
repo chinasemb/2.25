@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/public/css/reset.css">
+  <link rel="stylesheet" href="/public/css/header_user.css">
+  <link rel="stylesheet" href="/public/css/footer.css">
+  {%block head%} {%endblock%}
+  <title>天下美食-个人中心</title>
+</head>
+
+<body>
+  <div class="box_outside">
+    <div class="myself_bg">
+      <div class="wrap">
+        <div class="self_msg">
+          <div class="self_img">
+            <img class='avatar' src="/public/uploads/avatar/{{user.avatar}}" alt="">
+            <input multiple class='avatarInput' type="file" style='display:none' />
+          </div>
+          <div class="self_name">
+            <i>{{user.username}}</i>
+            <span>{{user.createdAt.getFullYear()}}年{{user.createdAt.getMonth()+1}}月{{user.createdAt.getDate()}}日加入</span>
+          </div>
+        </div>
+        <div class="self_visit">
+          <ul>
+            <li>
+              <i>0</i>
+              <span>粉丝</span>
+            </li>
+            <li>
+              <i>16</i>
+              <span>关注</span>
+            </li>
+            <li>
+              <i>1</i>
+              <span>访问</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <nav class="self_nav">
+      <div class="wrap">
+        <ul>
+          <li><a href="/">美食首页</a></li>
+          <li {%if active==='index' %}class="active" {%endif%}><a href="/user">主页</a></li>
+          <li {%if active==='profile' %}class="active" {%endif%}><a href="/user/profile">基本资料</a></li>
+          <li {%if active==='cookbook' %}class="active" {%endif%}><a href="/user/cookbook">我的菜谱</a></li>
+          <li><a href="#">我的收藏</a></li>
+          <li><a href="/user/logout">退出</a></li>
+        </ul>
+      </div>
+    </nav>
+    {%block main%}{%endblock%}
+    <div class="wrap">
+      <footer class="bottom_foot">
+        <div class="foot_nav">
+          <h3>美食天下 - 让吃更美好！</h3>
+          <nav class="nav_list">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">加入我们</a>
+            <a href="#">服务声明</a>
+            <a href="#">友情链接</a>
+            <a href="#">网站地图</a>
+            <a href="#">移动应用</a>
+          </nav>
+        </div>
+        <p class="friends_link">
+          <span>友情链接：</span>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+          <a href="#">妙味课堂</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  {%block js%}
+  {%endblock%}
+</body>
+
+</html>

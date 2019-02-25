@@ -1,0 +1,83 @@
+{%block head%}
+<link rel="stylesheet" href="/public/css/user_form.css">
+{%endblock%}
+
+{%extends './layout.html'%}
+
+
+{%block main%}
+<section class="self_content addmenuform">
+    <div class="wrap">
+        <h2><span>基本资料</span></h2>
+
+        <form class="form profile_form" action="/user/profile" method='post'>
+
+            <div>
+                <p>昵称</p>
+                <input name="nickname" type="text" value='{{profile.nickname}}' />
+            </div>
+
+            <div>
+                <p>手机</p>
+                <input name="mobile" type="text" value='{{profile.mobile}}' />
+            </div>
+
+            <div>
+                <p>邮箱</p>
+                <input name="email" type="text" value='{{profile.email}}' />
+            </div>
+
+            <div>
+                <p>真实姓名</p>
+                <input name="realname" type="text" value='{{profile.realname}}' />
+            </div>
+
+            <div>
+                <p>性别</p>
+                <div>
+                    <select class='optionlist' name="gender">
+                        <option value="男" {%if profile.gender==='男' %} selected{%endif%}>男</option>
+                        <option value="女" {%if profile.gender==='女' %} selected{%endif%}>女</option>
+                        <option value="保密" {%if profile.gender==='保密' %} selected{%endif%}>保密</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <p>生日</p>
+                <div>
+                    <select class="select" name="year">
+                        {% for i in range(1900, 2050) %}
+                        <option value="{{i}}" {%if i===profile.birthday.getFullYear()%} selected{%endif%}>{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                    <select class="select" name="month">
+                        {% for i in range(1, 13) %}
+                        <option value="{{i}}" {%if i===profile.birthday.getMonth()+1%} selected{%endif%}>{{ i }}</option>
+                        {% endfor %}
+
+                    </select>
+                    <select class="select" name="date">
+                        {% for i in range(1, 32) %}
+                        <option value="{{i}}" {%if i===profile.birthday.getDate()%} selected{%endif%}>{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button class="submit">保存</button>
+                <p class="message"></p>
+            </div>
+
+        </form>
+    </div>
+</section>
+{%endblock%}
+
+
+{%block js%}
+<script src='/public/js/jquery.min.js'></script>
+<script src='/public/js/cookbook.js'></script>
+<script src='/public/js/user.js'></script>
+{%endblock%}

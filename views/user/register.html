@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/public/css/reset.css">
+        <link rel="stylesheet" href="/public/css/register_login.css">
+        <title>美食天下-妙味版</title>
+    </head>
+    <body>
+        <div class="box_bg">
+            <div class="box">
+                <div class="header">
+                    <a class="active" href="javascript:;">注册</a>
+                    <a href="/user/login">登录</a>
+                </div>
+                <div class="body">
+                    <div class="con">
+                        <form action="/user/register" method="POST">
+                            <input type="text" name="username" placeholder="手机号/昵称：" />
+                            <input type="password" name="password" placeholder="密 码：" />
+                            <input type="password" name='repassword' placeholder="再次输入密码：" />
+                            <button>确认注册</button>
+                            <p class="message"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src='/public/js/jquery.min.js'></script>
+        <script src='/public/js/register.js'></script>
+        <script src='/public/js/2.js'></script>
+    </body>
+</html>
