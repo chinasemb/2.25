@@ -20,10 +20,10 @@
     "seederStorageTableName": "sequelize_data"
   },
   "production": {
-    "username": "www",
-    "password": "www",
+    "username": "root",
+    "password": "Shuishui123",
     "database": "miaov_production",
-    "host": "127.0.0.1",
+    "host": "172.19.0.11",
     "dialect": "mysql",
     "timezone": "+08:00",
     "seederStorage": "sequelize",
