@@ -11,7 +11,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = configs[env];
 // console.log(config);
 //连接数据库
-exports.default = new Sequelize(config.database, config.password, config.username, config);
+exports.default = new Sequelize(config.database, config.username, config.password, config);
 /* 创建模型对象
       define 方法需要传入两个泛型
           第一个参数  Instance<{}> : 决定了通过CategoryModel 操作的数据是一个Model 的Instance 对象,这样的话,才能调用类似 get ,set等方法,Instance<{}> 中的{}决定了get和set能传入的字段名称

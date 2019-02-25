@@ -19,7 +19,7 @@ const config = configs[env];
 
 //连接数据库
 
-export default  new Sequelize(config.database, config.password, config.username, config);
+export default new Sequelize(config.database, config.username, config.password, config);
 
 /* 创建模型对象
       define 方法需要传入两个泛型   
